@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>
+            <%=locals.title%>
+        </title>
+        <script src="https://kit.fontawesome.com/af827e2ea3.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/CSS/home.css">
+    </head>
+    <body>
+        <!-- <h1>Rendered from EJS View !</h1> -->
+        <h2 class="contact-head">
+            <i class="far fa-address-book" style="color:grey;"></i>  
+            My Contacts List
+        </h2>
+       <div class="contact-list">
+           <ul>
+               <%for(let i of Contact_list ){%>
+                  <li class="list-items">
+                    <div class="details">
+                      <p class="p1"><%=i.name%></p>
+                      <p class="p2"><%=i.phone%></p>
+                      </div>
+                      <div class="del-button">
+                          <a href="delete-contacts/?id=<%=i._id%>">
+                              <i class="far fa-window-close"></i>
+                          </a>
+                      </div>
+                  </li>
+                <%}%>
+           </ul>
+           <form action="/create-contacts" method="POST">
+               <input type="text" name="name" placeholder="Enter Name" required>
+               <input type="number" name="phone" placeholder="Enter phone No." required>
+               <button type="submit">Add Contact</button>
+           </form>
+       </div>
+       <script src="./Js/home.js"></script>
+    </body>
+</html>
