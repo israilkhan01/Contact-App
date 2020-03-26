@@ -10,16 +10,13 @@ app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded());  //this reads only form data which we have submitted not params.
 app.use(express.static("assests"));
-var contactList=[
-    {
-        name:"Israil",
-        phone:"888888888",
-    },
-    {
-        name:"Sameer",
-        phone:"777777777",
-    }
-]
+// var contactList=[
+//     {
+//         name:"Israil",
+//         phone:"888888888",
+//     },
+//    
+// ]
 app.get("/",function(req,res){
             // console.log(__dirname);
         // res.send("<h1> Hello! motherFuckers</h1>");
